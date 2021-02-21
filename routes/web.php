@@ -17,10 +17,13 @@ Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/user',function(){
+Route::get('/',function(){
 	return view('user');
 })->name('user');
 
 Route::get('cv', function(){
 	return view('Portfolio');
 });
+Route::get('/user',function(){
+	return view('welcome');
+})
