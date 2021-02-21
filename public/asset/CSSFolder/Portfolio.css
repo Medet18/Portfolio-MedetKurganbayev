@@ -422,7 +422,7 @@ svg circle:nth-child(2){
 }
 .container4 .box4 .fa:hover ~ h3,
 .container4 .box4 .fa:hover ~ h4{
-	color: #000;
+	color: #111;
 }
 
 .container4 .box4 .icon h4{
