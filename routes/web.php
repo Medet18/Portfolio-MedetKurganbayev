@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +33,23 @@ Route::get('/user',function(){
 Route::get('/test',function(){
 	return view('test');
 });
+//////////////////////////
+Route::get('post/create',function(){
+    DB::table('post')->insert([
+        'title'=>'DataBase',
+        'body'=>'DB, MS SQL,MySql,PL SQL'
+    ]);
+});
 
+Route::get('post/create',function(){
+    DB::table('post')->insert([
+        'title'=>'PHP',
+        'body'=>'Laravel'
+    ]);
+});
+
+
+Route::get('post',function(){
+    $post = Post::find(4);
+    return $post->body;
+});
