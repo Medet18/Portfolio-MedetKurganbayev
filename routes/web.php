@@ -13,17 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+});//->name('welcome');
 
-Route::get('/',function(){
+Route::get('/u',function(){
 	return view('user');
-})->name('user');
+});//->name('user');
 
 Route::get('cv', function(){
 	return view('Portfolio');
 });
 Route::get('/user',function(){
 	return view('welcome');
-})
+});
+
+Route::get('/test',function(){
+	return view('test');
+});
+
