@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Post;
+use App\Models\CarsMod;
+use App\Models\CLient1;
+
+use App\Http\Controllers\CLient1Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,8 +52,38 @@ Route::get('post/create',function(){
     ]);
 });
 
-
 Route::get('post',function(){
     $post = Post::find(4);
     return $post->body;
 });
+////defense//////////
+Route::get('cars/create',function(){
+    DB::table('_cars')->insert([
+        'Owner'=>'Ricky',
+        'Car_brand'=>'Dodge',
+        'Volume'=>4
+    ]);
+});
+
+Route::get('cars2',function(){
+    $a = CarsMod::find(1);
+    return $a;
+});
+/////clients table//////
+
+Route::get('client1/add',function(){
+    DB::table('clients1')->insert([
+        'name'=>'Abylay',
+        'lastname'=>'Omar',
+        'age'=>30
+    ]);
+
+});
+Route::get('client1',function(){
+    $client1 =  Client1::find(1);
+    return $client1;//->name;
+});
+
+////////////lab5555//////////////
+
+Route::get('client2', [Client1Controller::class,'index']);
