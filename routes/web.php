@@ -8,6 +8,15 @@ use App\Models\CarsMod;
 use App\Models\CLient1;
 
 use App\Http\Controllers\CLient1Controller;
+
+//lab8 
+use App\Http\Controllers\MailController;
+use App\Mail\DemoEmail;
+///
+use App\Http\Controllers\MailController1;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,3 +96,11 @@ Route::get('client1',function(){
 ////////////lab5555//////////////
 
 Route::get('client2', [Client1Controller::class,'index']);
+
+
+
+///////////////////////////////////////////lab8///////////
+//Email related
+//Route::get('mail/send','MailController@send');
+
+Route::get('/send-email', [MailController1::class, 'sendEmail']);
